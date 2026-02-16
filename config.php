@@ -11,6 +11,7 @@
 
 // Database Configuration - InfinityFree
 define('DB_HOST', 'sql308.infinityfree.com');
+define('DB_PORT', 3306);
 define('DB_USER', 'if0_41067522');
 define('DB_PASS', 'OwLZ5A8SjIcw');
 define('DB_NAME', 'if0_41067522_database');
