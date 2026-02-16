@@ -17,7 +17,8 @@ jobs:
           password: ${{ secrets.FTP_PASS }}
           server-dir: /htdocs/
           exclude: |
-            **/.git*
+            .git/**
+            .github/**
             **/.DS_Store
             uploads/**
             logs/**
