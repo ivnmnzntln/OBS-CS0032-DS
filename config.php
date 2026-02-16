@@ -36,6 +36,14 @@ define('UPLOAD_DIR', __DIR__ . '/uploads/');
 define('MAX_FILE_SIZE', 5242880); // 5MB
 define('ALLOWED_EXTENSIONS', ['jpg', 'jpeg', 'png', 'gif']);
 
+// Email Configuration (SMTP)
+define('SMTP_HOST', getenv('SMTP_HOST') ?: 'smtp.gmail.com');
+define('SMTP_PORT', getenv('SMTP_PORT') ?: 587);
+define('SMTP_USER', getenv('SMTP_USER') ?: 'imuntalanjr@fit.edu.ph');
+define('SMTP_PASS', getenv('SMTP_PASS') ?: 'lfjk cgmb pvny awvy');
+define('SMTP_FROM_EMAIL', getenv('SMTP_FROM_EMAIL') ?: 'imuntalanjr@fit.edu.ph');
+define('SMTP_FROM_NAME', getenv('SMTP_FROM_NAME') ?: Online Bookstore);
+
 // Error Reporting (Production)
 error_reporting(E_ALL & ~E_NOTICE);
 ini_set('display_errors', 0);

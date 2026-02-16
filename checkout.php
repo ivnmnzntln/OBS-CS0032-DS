@@ -8,6 +8,7 @@
 
 require_once 'config.php';
 require_once 'database.php';
+require_once 'includes/mailer.php';
 
 // Require login
 if (!isset($_SESSION['user_id'])) {
@@ -109,6 +110,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 $conn->commit();
                 
+                // Send order confirmation email (best-effort)
+                sendOrderConfirmation(
+                    $user['email'] ?? '',
+                    $user['full_name'] ?? 'Customer',
+                    $order_id,
+                    $cart_items,
+                    $subtotal,
+                    $tax,
+                    $total,
+                    $tracking_number
+                );
+
                 // Redirect to order confirmation
                 header("Location: order_confirmation.php?order_id=$order_id");
                 exit();
