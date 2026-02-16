@@ -1,9 +1,3 @@
--- Online Bookstore Database Schema
--- Created: January 29, 2026
--- MLP: Minimum Lovable Product
-
-CREATE DATABASE IF NOT EXISTS bookstore_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE bookstore_db;
 
 -- Users Table (FR-01, FR-02, NFR-03)
 CREATE TABLE IF NOT EXISTS users (

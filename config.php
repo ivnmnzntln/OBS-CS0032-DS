@@ -9,15 +9,15 @@
  * NFR-12: Maintainability
  */
 
-// Database Configuration
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'bookstore_db');
+// Database Configuration - InfinityFree
+define('DB_HOST', 'sql308.infinityfree.com');
+define('DB_USER', 'if0_41067522');
+define('DB_PASS', 'OwLZ5A8SjIcw');
+define('DB_NAME', 'if0_41067522_database');
 
 // Application Configuration
 define('SITE_NAME', 'Online Bookstore');
-define('SITE_URL', 'http://localhost/bookstore');
+define('SITE_URL', 'https://obs-case2.free.nf/');
 define('ADMIN_EMAIL', 'admin@bookstore.com');
 
 // Security Configuration (NFR-03, NFR-05)
@@ -35,14 +35,16 @@ define('UPLOAD_DIR', __DIR__ . '/uploads/');
 define('MAX_FILE_SIZE', 5242880); // 5MB
 define('ALLOWED_EXTENSIONS', ['jpg', 'jpeg', 'png', 'gif']);
 
-// Error Reporting (Development)
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// Error Reporting (Production)
+error_reporting(E_ALL & ~E_NOTICE);
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/error.log');
 
 // Session Configuration (NFR-03)
 ini_set('session.cookie_httponly', 1);
 ini_set('session.use_only_cookies', 1);
-ini_set('session.cookie_secure', 0); // Set to 1 for HTTPS in production
+ini_set('session.cookie_secure', 1); // Set to 1 for HTTPS in production
 ini_set('session.cookie_samesite', 'Strict');
 
 // Start session
