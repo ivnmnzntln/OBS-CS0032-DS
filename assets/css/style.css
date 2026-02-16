@@ -214,6 +214,20 @@ body {
     display: block;
 }
 
+/* Book Details */
+.book-details-image {
+    width: 100%;
+    max-width: 420px;
+}
+
+.book-details-image img {
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+    object-fit: contain;
+    display: block;
+}
+
 .book-category {
     display: inline-block;
     padding: 4px 10px;
